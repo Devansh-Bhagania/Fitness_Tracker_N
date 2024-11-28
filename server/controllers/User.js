@@ -52,7 +52,7 @@ export const UserLogin = async (req, res, next) => {
       return next(createError(403, "Incorrect password"));
     }
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT, {
+    const token = jwt.sign({ id: user._id }, 'secret', {
       expiresIn: "9999 years",
     });
 
